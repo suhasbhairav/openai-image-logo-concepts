@@ -20,6 +20,12 @@ Built by **[Suhas Bhairav](https://suhasbhairav.com)** as part of the **[AI Temp
 | This Template Page | [https://suhasbhairav.com/ai-templates/openai-image-logo-concepts](https://suhasbhairav.com/ai-templates/openai-image-logo-concepts) |
 | Creator | [https://suhasbhairav.com](https://suhasbhairav.com) |
 
+## One-Click Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsuhasbhairav%2Fopenai-image-logo-concepts&env=OPENAI_API_KEY%2COPENAI_IMAGE_MODEL&envDescription=Add+the+server-side+API+keys+required+by+this+template.+These+values+are+stored+as+deployment+environment+variables+and+are+not+committed+to+the+repository.&envLink=https%3A%2F%2Fgithub.com%2Fsuhasbhairav%2Fopenai-image-logo-concepts%23environment-variables)
+
+Use the button above to clone and deploy this template directly from GitHub. The deploy flow will ask for `OPENAI_API_KEY`, `OPENAI_IMAGE_MODEL` as production environment variables before the app goes live.
+
 ## Executive Overview
 
 OpenAI Image Logo Concepts is designed for builders who need more than a static UI kit. It provides a concrete application pattern with a Next.js frontend, server-side API route, environment-driven provider configuration, and a responsive interface that can be adapted into a SaaS product, internal workflow, customer-facing assistant, or AI operations tool.
