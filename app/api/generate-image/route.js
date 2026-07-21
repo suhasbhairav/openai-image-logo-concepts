@@ -1,3 +1,4 @@
+import { parseJsonRequest, validateRequestBody, toSafeError } from "@/lib/production-guardrails";
 import OpenAI from "openai";
 
 export const runtime = "nodejs";
@@ -21,7 +22,12 @@ This route returns a prompt brief without spending tokens until an API key is co
 }
 
 export async function POST(request) {
-  const body = await request.json().catch(() => ({}));
+  const body = await parseJsonRequest(request);
+  const guardrail = validateRequestBody(body);
+  if (!guardrail.ok) {
+    return Response.json({ error: guardrail.error }, { status: guardrail.status });
+  }
+
   const prompt = typeof body.prompt === "string" ? body.prompt.trim() : "";
 
   if (!prompt) {
@@ -52,7 +58,7 @@ export async function POST(request) {
     });
   } catch (error) {
     return Response.json(
-      { error: error.message || "Image generation failed." },
+      { error: toSafeError(error, "Image generation failed.") },
       { status: 500 },
     );
   }
